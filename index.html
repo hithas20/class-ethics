@@ -1,9 +1,310 @@
+
+
+
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<script>
+
+	function showSection(num) {
+
+		for(var i=0;i<num;i++) {
+			$("#section-"+i).slideUp();
+    $(".section-"+i+"-opt").addClass().delay(400).fadeOut(250);
+		}
+		for(var i=num+1;i<=10;i++) {
+$("#section-"+i).slideUp();
+    $(".section-"+i+"-opt").addClass().delay(400).fadeOut(250);
+		}
+
+		$("#section-"+num).fadeOut().delay(750).fadeIn();   
+		$(".section-"+num+"-opt").fadeOut().delay(900).slideDown(); 
+
+		if(num==2 || num==4 || num==5 || num==7) {
+			    $(".play-again-text").hide().delay(1700).fadeIn(200);
+    $(".play-again").fadeIn().delay(1000).animate({width:"100px", height:"20px", borderTopLeftRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0, opacity:"100%"})
+			
+		}   
+    }
+
+
+	$(document).ready(function(){
+  $(".play-again").click(function(){
+    showSection(0);
+    $(".play-again-text").fadeOut(140);
+    $(".play-again").animate({width:"0px", height:"0px", borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10, opacity:"0%"}).fadeOut(100);
+
+
+  });
+
+  $(".section-1-lead").click(function(){
+    showSection(1);
+  });
+
+  $(".section-2-lead").click(function(){
+    showSection(2);
+  });
+
+  $(".section-3-lead").click(function(){
+    showSection(3);
+  });
+
+  $(".section-4-lead").click(function(){
+    showSection(4);
+  });
+
+  $(".section-5-lead").click(function(){
+    showSection(5);
+  });
+
+  $(".section-6-lead").click(function(){
+    showSection(6);
+  });
+
+  $(".section-7-lead").click(function(){
+    showSection(7);
+  });
+
+  $(".section-8-lead").click(function(){
+    showSection(8);
+  });
+
+
+});
+</script>
+
+	<style>
+
+		body {
+      background-color: #2a363b;
+      color: #fff;
+      font-family: "Hubballi", cursive, sans-serif;
+      font-size:120%;
+      line-height:1.1;
+      margin: 0;
+      min-height: 100vh;
+      background-image: 
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .chalk-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 20px 40px;
+      margin: auto;
+      margin-bottom:20px;
+      margin-top:12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .chalk-box-mini {
+    	background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 5px 40px;
+      margin-bottom:10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      background-color: rgba(255,255,255,0.1);
+      transform: scale(1.05);
+    }
+
+    .chalk-line {
+      border: none;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin: 2rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+   
+
+    #section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8 {
+    	display:none;
+    }
+
+
+    .section-1-opt, .section-2-opt, .section-3-opt, .section-4-opt, .section-6-opt, .section-7-opt, .section-8-opt {
+    	display:none;
+    	cursor:pointer;
+    }
+
+    .section-0-opt {
+    	cursor:pointer;
+    }
+
+    .play-again {
+    	width:0px;
+    	background-color:rgb(250,250,250,.3);
+    	opacity:0%;
+    	text-align:center;
+    	padding:15px;
+    	margin:auto;
+    	margin-top:30px;
+    	border-radius:10px;
+    	cursor:pointer;
+    	display:none;
+
+    }
+
+	</style>
 </head>
 <body>
-	<p>Testing</p>
+	<div id="main" class="container">
+	<div class="chalk-box" id="section-0">
+<p>You teach 5th grade. Marcetta is a great student, curious and perceptive, sometimes staying in at recess of her own volition to ask questions about the material or discuss it with you. As part of the social studies curriculum, you have the students present on a historical topic of their choosing, with a focus on how that topic is relevant to the present. The idea is to show students that history is not a series of facts to memorize, but a living and breathing entity that affects the way we live today. They can choose from a set of preselected topics or propose their own. In the past, students have enjoyed getting to choose more "edgy" topics like the development of the nuclear bomb and the Vietnam War.</p>
+
+
+<p>Marcetta wants to do her presentation on the history of police violence against minorities, with an emphasis on recent events. You know that she won't include anything too graphic or explicit, but you live in a conservative area, and you know that several of your students' parents work in law enforcement. If you approve the presentation, you risk raising the ire of other families. But if you reject the topic, you might quash Marcetta's interest in social studies and her budding fight for social justice. Do you:</p>
+	</div>
+<div class="chalk-box-mini opt section-0-opt section-6-lead">
+<p>Tell Marcetta the issue is too mature for the grade level, and suggest that she choose a related but less controversial topic, such as a broader treatment of the Civil Rights movement.</div>
+<div class="chalk-box-mini opt section-0-opt section-8-lead">
+<p>Allow Marcetta to do the presentation, as forbidding her topic would mean silencing her as others in her community had already been silenced.</p>
+</div>
+
+
+
+<div id="section-1">
+	<div class="chalk-box">
+		<p>The discussion goes well and all the students seem to enjoy it. Marcetta speaks very eloquently and you can see some of her passion returning. However, before you've even sat down for dinner that night, you get emails from two parents who took issue with the content discussed. One name-drops the principal by the first name, and the other has a husband who's a cop. Do you:
+		</p>
+	</div>
+</div>
+<div class="chalk-box-mini section-1-opt section-5-lead">
+	<p>Politely but firmly express that the "round table" was a safe space for students to discuss issues that affected their lives, and the views discussed belonged to the students themselves, rather than being part of the class curriculum.</p>
+</div>
+<div class="chalk-box-mini section-1-opt section-7-lead">
+	<p>Apologize for the offense caused and ask if the cop father would come in and do a presentation on policework, to present both sides of the issue.</p>
+</div>
+<div class="chalk-box-mini section-1-opt section-4-lead">
+	<p>Shelve the round table discussions for the rest of the year, but tell Marcetta and another student, Deisy, who was also very passionate during the discussion, that they can write short reports or make multimedia projects on their chosen topics for extra credit.</p>
+</div>
+
+<div id="section-2">
+<div class="chalk-box">
+	<p>Marcetta finishes the year still without much interest; you are worried for her but can only watch. You hope she regains her spark when she enters middle school.</p>
+</div>
+</div>
+
+<div id="section-3">
+<div class="chalk-box">
+	<p>Marcetta's mother writes you an angry email, asking how dare you describe the factual deaths of people in police custody as "controversial". She says that ever since you apologized to the upset parents, the children of those families have been picking on Marcetta, since they feel that they were validated as being in the "right". However, you yourself don't hear anything further from those parents, who seem satisfied with the apology.
+	</p>
+</div>
+</div>
+<div class="chalk-box-mini section-3-opt section-6-lead">
+	<p>Continue <span style="font-size:80%">&#8594;</span></p>
+</div>
+
+<div id="section-4">
+<div class="chalk-box">
+	<p> Marcetta is interested in the idea, but she lets slip to a friend that she got an extra credit opportunity. The other kids in your class begin clamoring asking why they don't also get extra credit. You add another extra credit opportunity for interested students, but emails have already started coming in from certain addresses accusing you of "special treatment" (one father even using the term "affirmative action"), and the parents are at it like clockwork...
+	</p>
+</div>
+</div>
+
+<div id="section-5">
+<div class="chalk-box">
+	<p> The vexed parents are angry at the lack of recognition of their concerns, and one of the mothers, who is a prominent community member and happens to have a brother who's married to the principal's niece, takes issue with your teaching methods. In the meantime, Marcetta's mother writes you a lovely email conveying her appreciation that you stuck up for her daughter, and expresses that you are Marcetta's favorite teacher and that she looks forward to school every day because of your class. She says that it is hard for Marcetta to be one of the few students of color in the district, and that it means a lot to her to have an adult who understands her and gives her a voice. However, your employment with the school next year may be in question.
+	</p>
+</div>
+</div>
+
+<div id="section-6">
+	<div class="chalk-box">
+		<p>Conflict is averted, but Marcetta seems dispirited and puts less effort into her work throughout the following weeks. She appears to lose interest and stops staying in to speak with you. You:</p>
+	</div>
+</div>
+<div class="chalk-box-mini section-6-opt section-2-lead">
+	<p>Don't do anything; you have an entire class to teach.</p>
+</div>
+<div class="chalk-box-mini section-6-opt section-4-lead">
+	<p>Speak with Marcetta and apologize for not letting her do the presentation, explaining the complexities of the situation. Offer to give her extra credit if she compiles a presentation on her originally desired topic, which she can deliver to you during recess.</p>
+</div>
+<div class="chalk-box-mini section-6-opt section-1-lead">
+	<p>Institute a less formal "round table" discussion during a break between modules, where students can bring up topics they feel are important or relevant to their lives.</p>
+</div>
+
+
+<div id="section-7">
+	<div class="chalk-box">
+	<p> The peeved parents are slightly mollified, but you can still feel the tension when you meet with the principal, who is tangentially related to one of the upset mothers. Marcetta sits stoically through the police presentation, but you know she can tell it is a direct rebuttal to her own words. Although remaining an A student, she seems a little dispirited and completes her work to a textbook standard, not going above and beyond with creativity and effort like she used to. Your job appears safe and any disaster was averted, you can't help but feeling a sense of dissatisfaction at being trapped in the middle ground.
+	</p>
+	</div>
+</div>
+
+
+<div id="section-8">
+	<div class="chalk-box">
+		<p>Several parents of students write and complain, saying that the presentation demonized law enforcement and encouraged students not to trust the police to keep them safe. You get into a bit of hot water with the principal, who strongly suggests that you should apologize to the aggrieved parents. Do you:</p>
+	</div>
+</div>
+<div class="chalk-box-mini section-8-opt section-3-lead">
+	<p>Include an apology to the parents in the class newsletter and assure them that controversial topics will be discussed with the class community before being aired in the classroom. </p>
+</div>
+<div class="chalk-box-mini section-8-opt section-5-lead">
+	<p>Do nothing; you pride your classroom on being a place where students can learn to exercise their free speech and be heard and acknowledged despite their youth.</p>
+</div>
+<div class="chalk-box-mini section-8-opt section-7-lead">
+	<p>Instead of a formal apology, ask the complaining families if one of the parents in law enforcement would come in and do a presentation on policework, to present both sides of the issue.</p>
+</div>
+
+
+<div class="play-again"><span class="play-again-text">Play Again</span></div>
+
+</div>
 </body>
 
 </html>
-
